@@ -39,8 +39,8 @@ const Footer = () => {
         {/* copy right */}
         <span className="flex justify-center m-4 mb-10">
             <p>© 2026 FinFlow. All rights reserved.</p>
-        </span>
-    </div>
+        </span> 
+    </div> 
   )
 }
 
