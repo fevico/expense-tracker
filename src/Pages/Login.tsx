@@ -26,11 +26,11 @@ const Login = () => {
     <div>
         <div  className="flex flex-row justify-between">
     <Label className="pb-1" htmlFor="email">Password</Label>
-                    <Label className="pb-1" htmlFor="email">Forget Password</Label>   
+        <Label className="pb-1" htmlFor="email">Forget Password</Label>   
                 </div>
     <div className="relative">
         <Lock className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 w-4 h-4" />
-  <Input type="password" placeholder="Enter email" className="pl-10" />
+  <Input type="password" required placeholder="Enter email" className="pl-10" />
     </div>
     <div className="flex flex-row gap-4 pt-6 ">
         <Checkbox/>
