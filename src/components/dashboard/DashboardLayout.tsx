@@ -1,20 +1,13 @@
 import { Outlet } from "react-router-dom";
+import Sidebar from "./Sidebar";
 
 const DashboardLayout = () => {
+  
   return (
-    <div className="flex h-screen bg-gray-100">
+    <div className="flex min-h-screen bg-gray-100">
 
       {/* Sidebar */}
-      <aside className="w-64 bg-white shadow-md p-6">
-        <h2 className="text-xl font-bold mb-6">FinFlow</h2>
-
-        <nav className="flex flex-col gap-4">
-          <a href="#" className="text-gray-700 hover:text-black">Dashboard</a>
-          <a href="#" className="text-gray-700 hover:text-black">Transactions</a>
-          <a href="#" className="text-gray-700 hover:text-black">Analytics</a>
-          <a href="#" className="text-gray-700 hover:text-black">Settings</a>
-        </nav>
-      </aside>
+      <Sidebar/>
 
       {/* Main Content */}
       <main className="flex-1 flex flex-col">
@@ -31,9 +24,9 @@ const DashboardLayout = () => {
         <div className="flex-1 p-6">
           <h1 className="text-2xl font-bold mb-4">Dashboard Overview</h1>
           {/* Your cards, charts etc go here */}
+
           <Outlet/>
         </div>
-
       </main>
     </div>
   );

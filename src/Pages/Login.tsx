@@ -4,8 +4,23 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Github, Lock, Mail, TrendingUp } from "lucide-react"
+import {type SubmitHandler, useForm} from "react-hook-form"
+import {z} from 'zod'
+import { zodResolver } from "@hookform/resolvers/zod"
+
+const formSchema = z.object({
+    email: z.string().email('Invalid email address'),
+    password: z.string().min(8, 'Password must be at least 8 characters long')
+})
+
+type formFields = z.infer<typeof formSchema>
 
 const Login = () => {
+
+    const {register, handleSubmit, formState: {errors} } = useForm<formFields>({resolver: zodResolver(formSchema)})
+    const onSubmit: SubmitHandler<formFields> = (data) => {
+        console.log(data)
+    }
   return (  
     <div className="">
         <div className="flex flex-col h-screen gap-4 justify-center items-center w-full">
@@ -15,13 +30,15 @@ const Login = () => {
         <h1 className="text-xl font-bold">Welcome Back</h1>
         <p className="text-gray-500">Sign in to manage your finances</p>
             <Card className="w-full max-w-md shadow-2xl p-6">
-                <form action="" className="flex flex-col gap-6">
+
+                <form action="" onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6">
             <div className="">
                 <Label className="pb-1" htmlFor="email">Email Address</Label>
 <div className="relative">
   <Mail className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 w-4 h-4" />
-  <Input type="text" placeholder="Enter email" className="pl-10" />
+  <Input {...register('email')} type="text" placeholder="Enter email" className="pl-10" />
 </div> 
+{errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
 </div>            
     <div>
         <div  className="flex flex-row justify-between">
@@ -30,7 +47,8 @@ const Login = () => {
                 </div>
     <div className="relative">
         <Lock className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 w-4 h-4" />
-  <Input type="password" required placeholder="Enter email" className="pl-10" />
+  <Input {...register('password')} type="password" placeholder="Enter password" className="pl-10" />
+  {errors.password && <p className="text-red-500 text-sm">{errors.password.message}</p>}
     </div>
     <div className="flex flex-row gap-4 pt-6 ">
         <Checkbox/>
