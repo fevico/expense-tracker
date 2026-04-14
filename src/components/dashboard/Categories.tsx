@@ -25,7 +25,7 @@ const Categories = () => {
                     <Progress value={item.percent} color={item.color}/>
                     </div>
                 ))}
-            </div>
+            </div> 
         </Card>
     // </div>
   )

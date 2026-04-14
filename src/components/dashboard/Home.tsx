@@ -2,6 +2,7 @@ import { MoveDownRight, MoveUpRight, Wallet } from 'lucide-react'
 import DashboardCard from '../DashboardCard'
 import Categories from './Categories'
 import TransactionGraph from './Graph'
+import Transactions from './Transactions'
 
 const DashboardHome = () => {
     const data = [
@@ -48,7 +49,10 @@ const DashboardHome = () => {
             <div className="flex-1">
             <Categories/> 
             </div>
+
+            {/* Transactions */}
           </div>
+            <Transactions/>
     </div>
   )
 }

@@ -1,0 +1,58 @@
+import { BellElectric, Clapperboard, Coffee, HandCoins, ShoppingBag, Workflow } from "lucide-react";
+
+export const transactions = [
+  {
+    id: 1,
+    title: "Coffee Shop",
+    category: "Food & Drink",
+    date: "Feb 21, 2026",
+    amount: -4.5,
+    type: "expense",
+    icon: Coffee, 
+  },
+  {
+    id: 2,
+    title: "Salary Deposit",
+    category: "Income",
+    date: "Feb 20, 2026",
+    amount: 3500,
+    type: "income",
+    icon: HandCoins,
+  },
+  {
+    id: 3,
+    title: "Grocery Store",
+    category: "Shopping",
+    date: "Feb 20, 2026",
+    amount: -67.32,
+    type: "expense",
+    icon: ShoppingBag,
+  },
+  {
+    id: 4,
+    title: "Netflix Subscription",
+    category: "Entertainment",
+    date: "Feb 19, 2026",
+    amount: -15.99,
+    type: "expense",
+    icon: Clapperboard,
+  },
+  {
+    id: 5,
+    title: "Freelance Work",
+    category: "Income",
+    date: "Feb 18, 2026",
+    amount: 850,
+    type: "income",
+    icon: Workflow,
+  },
+  {
+    id: 6,
+    title: "Electric Bill",
+    category: "Utilities",
+    date: "Feb 18, 2026",
+    amount: -89.5,
+    type: "expense",
+    icon: BellElectric,
+  },
+]
