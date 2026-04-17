@@ -11,11 +11,17 @@ interface DashboardCardProps {
     };
 }
 
+const colorStyles: Record<string, string> = {
+  blue: "bg-gray-100 text-white",
+  green: "bg-green-100 text-green-600",
+  red: "bg-red-100 text-red-600",
+};
+
 const DashboardCard = ({ data }: DashboardCardProps) => {
-    return ( <> 
+    return ( <>  
     <div className="rounded-md ">
-            <Card className={`flex w-full max-w-sm p-4 ${data.color === "black" ? "bg-black text-white" : "bg-white"}`}>
-            <span className={`mr-3 ${data.iconColor ? `bg-${data.iconColor}-500` : 'bg-gray-500'} text-${data.iconColor}-800 w-10 h-10 rounded-sm flex items-center justify-center`}>
+            <Card className={`flex w-full max-w-sm p-4 ${data.color === "black" ? "bg-gradient-to-r from-[#0f172a] to-[#1e293b]  text-white" : "bg-white"}`}>
+            <span className={`mr-3 ${colorStyles[data.iconColor] || 'bg-gray-500'} text-${data.iconColor}-800 w-10 h-10 rounded-sm flex items-center justify-center`}>
                 {<data.item/>}
             </span>
             <div>

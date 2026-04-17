@@ -3,6 +3,12 @@ import DashboardCard from '../DashboardCard'
 import Categories from './Categories'
 import TransactionGraph from './Graph'
 import Transactions from './Transactions'
+import TransactionCard from './Card'
+import { cardDetails } from '@/data/card'
+import { Button } from '../ui/button'
+import { paymentMethods } from '@/data/payment'
+import Payment from './Payment'
+import Stats from './Stats'
 
 const DashboardHome = () => {
     const data = [
@@ -38,6 +44,32 @@ const DashboardHome = () => {
                     <DashboardCard key={index} data={item} />
                   ))}
                   </div>
+
+              <div className="mb-6">
+            <div className="flex justify-between">
+        <div className="flex flex-col py-1">
+          <h3 className="text-bold text-xl">My card</h3>
+          <p className="text-sm text-gray-500">Manage your payment methods</p>
+        </div>
+
+        <Button size="sm">Add Card</Button>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-2">
+                {cardDetails.map((item, index) => (
+                  <TransactionCard key={index} icon={item.icon} title={item.title} description={item.description} bgColor={item.bgColor} price={item.balance} cardNumber={item.cardNumber} expiry={item.expires} type={item.type} />
+                ))}
+      </div>
+              </div>
+
+              {/* mode of payment  */}
+              <div className='grid grid-cols-1 md:grid-cols-4 gap-4 p-2'>
+                {paymentMethods.map((item, index) => (
+                  <Payment key={index} icon={item.icon} title={item.title} description={item.description} color={item.color} />
+                ))}
+              </div>
+
+              {/* statistics */}
+              <Stats/>
                   {/* statistics */}
                   {/* <Home/> */}
         <div className="flex gap-6 flex-col lg:flex-row">

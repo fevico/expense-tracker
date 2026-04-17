@@ -42,7 +42,7 @@ const Transactions = () => {
       }`}
     >
       {transaction.type === "income" ? "+" : ""}
-      ${transaction.amount.toFixed(2)}
+      ${transaction.amount.toFixed(2)} 
     </p>
   </div>
 ))}
