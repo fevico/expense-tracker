@@ -1,5 +1,4 @@
 import { Card } from "../ui/card"
-import { Progress } from "../ui/progress"
 
 const data = [
   { name: "Food & Drink", amount: 420, percent: 80, color: "bg-orange-500" },
@@ -12,19 +11,24 @@ const data = [
 const Categories = () => {
   return (
     // <div>
-        <Card className="w-full p-6">
-            <h3>Top Categories</h3>
+        <Card className="max-w-md p-6 h-full rounded-md">
+            <h3 className="font-semibold">Top Categories</h3>
 
             <div className="space-y-4 mt-4">
                 {data.map((item, index) => (
                     <div className="">
                     <div className="flex justify-between" key={index}>
-                    <p>{item.name}</p>
-                    <p>${item.amount.toFixed(2)}</p>
+                    <p className="text-sm text-gray-500">{item.name}</p>
+                    <p>${item.amount}</p>
                 </div>
-                    <Progress value={item.percent} color={item.color}/>
-                    </div>
-                ))}
+                <div className="w-full h-2 bg-gray-200 rounded-full mt-2">
+                    <div
+                        className={`h-2 rounded-full ${item.color}`}
+                        style={{ width: `${item.percent}%` }}
+                    />
+                </div>
+            </div>
+        ))}
             </div> 
         </Card>
     // </div>

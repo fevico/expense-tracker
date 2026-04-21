@@ -10,7 +10,7 @@ const DashboardLayout = () => {
       <Sidebar/>
 
       {/* Main Content */}
-      <main className="flex-1 flex flex-col">
+      <main className="flex-1 flex flex-col gap-4">
 
         {/* Top Navbar */}
         <header className="h-16 bg-white shadow-sm flex items-center justify-end px-6">

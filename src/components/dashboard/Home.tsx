@@ -9,6 +9,8 @@ import { Button } from '../ui/button'
 import { paymentMethods } from '@/data/payment'
 import Payment from './Payment'
 import Stats from './Stats'
+import { transactions } from '@/data/transaction'
+import { useState } from 'react'
 
 const DashboardHome = () => {
     const data = [
@@ -37,6 +39,10 @@ const DashboardHome = () => {
           iconColor: "red"
         }
       ]
+      const [search, setSearch] = useState("");
+    const filteredTransactions = transactions.filter((item) =>
+  item.title.toLowerCase().includes(search.toLowerCase())
+);
   return (
     <div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
@@ -54,12 +60,10 @@ const DashboardHome = () => {
 
         <Button size="sm">Add Card</Button>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-2">
-                {cardDetails.map((item, index) => (
-                  <TransactionCard key={index} icon={item.icon} title={item.title} description={item.description} bgColor={item.bgColor} price={item.balance} cardNumber={item.cardNumber} expiry={item.expires} type={item.type} />
-                ))}
+      <div className=" ">
+        <TransactionCard />
       </div>
-              </div>
+           </div>
 
               {/* mode of payment  */}
               <div className='grid grid-cols-1 md:grid-cols-4 gap-4 p-2'>
@@ -84,7 +88,7 @@ const DashboardHome = () => {
 
             {/* Transactions */}
           </div>
-            <Transactions/>
+            <Transactions data={filteredTransactions}/>
     </div>
   )
 }

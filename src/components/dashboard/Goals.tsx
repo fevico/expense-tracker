@@ -1,11 +1,10 @@
 import { BanknoteArrowDown, Laptop, TicketsPlane } from "lucide-react"
 import { Card } from "../ui/card"
-import { Progress } from "../ui/progress"
 
 const Goals = () => {
     const goals = [
     {
-        title: "Vacation Funds",
+        title: "Vacation Funds", 
         total: 5000,
         spent: 2400,
         progress: 48,
@@ -34,24 +33,31 @@ const Goals = () => {
 ]
   return (
     <div className="mb-4">
-        <Card className="w-full max-w-md p-4">
+        <Card className="max-w-md h-[400px] p-4">
             <h2>Savings Goals</h2>
             <p className="text-gray-500">Track your progress.</p>
             <div className="flex flex-col gap-4 ">
             {goals.map((goal, index) =>(
                 <div key={index} className="flex items-center gap-4">
-                    <div className={`p-3 rounded-lg ${goal.color}`}>
-                        {<goal.icon size={20} />}
+                    <div className={`p-3 rounded-lg bg-gray-200 p-4`}>
+                        {<goal.icon size={25} />}
                     </div>
                     <div className="flex justify-between w-full">
                         <div className="flex flex-col">
                             <h2 className="text-bold">{goal.title}</h2>
                             <p className="text-gray-500 text-sm">${goal.spent.toFixed(2)} of ${goal.total.toFixed(2)}</p>
-                            <span className="mt-2"> 
+                            {/* <span className="mt-2"> 
                             <Progress value={goal.progress} className="w-full bg-gray-200" >
                                 <div className={`h-full rounded-lg ${goal.progressColor}`} />
                             </Progress>
-                            </span>
+                            </span> */}
+
+                            <div className="w-full h-2 bg-gray-200 rounded-full mt-2">
+  <div
+    className={`h-2 rounded-full ${goal.progressColor}`}
+    style={{ width: `${goal.progress}%` }}
+  />
+</div>
                         </div>
                         {/* <div className="justify-end">  */}
                         <h2 className="text-lg font-bold">${goal.progress}%</h2>

@@ -1,11 +1,13 @@
-import { transactions } from '@/data/transaction'
 import { Button } from '../ui/button'
 import { Card } from '../ui/card'
 
-const Transactions = () => {
+type Props = {
+  data: any[];
+}
+const Transactions = ({data}: Props) => {
   return (
     <div>
-        <Card className="w-full rounded-md p-4 mt-6">
+               <Card className="w-full rounded-md p-4 mt-6">
             <div className='flex justify-between'>
                 <div className="flex flex-col gap-1">
                 <h2 className='font-bold'>Recent Transactions</h2>
@@ -13,7 +15,7 @@ const Transactions = () => {
                 </div>
                 <Button variant="outline" size="sm">View All</Button>
             </div>
-            {transactions.map((transaction, index) => (
+            {data.map((transaction, index) => (
   <div
     key={index}
     className="flex items-center justify-between py-4 border-b"
@@ -47,6 +49,7 @@ const Transactions = () => {
   </div>
 ))}
 </Card>
+
     </div>
   )
 }
