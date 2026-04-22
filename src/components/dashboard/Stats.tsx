@@ -5,12 +5,12 @@ const Stats = () => {
   return (
     <div className="flex gap-4 items-stretch">
         {/* goals */}
-        <div className="flex-[1]">
+        <div className="flex-1">
         <Goals/>
         </div>
 
         {/* monthly budget  */}   
-        <div className="flex-[2]">
+        <div className="flex-2">
         <Budjet/>
         </div>
     </div>

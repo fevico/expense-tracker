@@ -5,6 +5,7 @@ import DashboardLayout from "./components/dashboard/DashboardLayout";
 import DashboardHome from "./components/dashboard/Home";
 import TransactionsPage from "./components/dashboard/transactions/Index";
 import MyCards from "./components/dashboard/cards/Index";
+import AnalyticsPage from "./components/dashboard/analytics/Index";
 
 function App() {
    
@@ -16,6 +17,7 @@ function App() {
     <Route index element={<DashboardHome />} />   
     <Route path="transactions" element={<TransactionsPage />} />   
     <Route path="cards" element={<MyCards />} />   
+    <Route path="analytics" element={<AnalyticsPage />} />   
     {/* <Route path="settings" element={<Settings />} /> */}
   </Route>
 

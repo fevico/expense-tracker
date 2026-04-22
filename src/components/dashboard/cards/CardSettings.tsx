@@ -23,7 +23,7 @@ const CardSettings = () => {
         }
     ]
     return ( <div>
-            <Card className="w-full h-[325px] p-6">
+            <Card className="w-full h-81.25 p-6">
                 <div className="flex flex-col gap-3">
                 <h1 className="text-xl font-semibold">Card Settings</h1>
                     {settings.map((item, index) => (

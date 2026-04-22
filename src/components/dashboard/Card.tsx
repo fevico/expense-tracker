@@ -18,7 +18,7 @@ const TransactionCard = () => {
               {item.title}
             </Badge>
           </div>
-          <span className="text-sm text-muted-foreground text-white capitalize text-bold">
+          <span className="text-sm text-white capitalize text-bold">
             {item.description}
           </span>
           <p className="text-2xl font-bold">${item.balance.toFixed(2)}</p>
