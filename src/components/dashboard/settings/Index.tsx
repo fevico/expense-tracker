@@ -5,6 +5,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Security from "./Security";
 import Notification from "./Notification";
+import Prefrence from "./Prefrence";
+import Danger from "./Danger";
 
 const SettingsPage = () => {
   return (
@@ -74,7 +76,13 @@ const SettingsPage = () => {
         <div className="h-full w-1/2">
         <Notification/>
         </div>
+
       </div>
+        {/* prefrence */}
+        <Prefrence/>
+
+        {/* danger */}
+        <Danger/>
     </div>
   );
 };
